@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Books</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">SpringProject</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/books">Books</a></li>
+            <li><a href="/authors">Authors</a></li>
+            <li><a href="/category">Categories</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div>
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th th:text="#{book.id}">id</th>
+                <th th:text="#{book.nazwa}">title</th>
+                <th th:text="#{book.autor}">author</th>
+                <th th:text="#{book.rozmiar}">size</th>
+                <th th:text="#{book.kategoria}">category</th>
+            </tr>
+            </thead>
+
+            <tr th:each="book : ${booksList}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.size}"></td>
+                <td th:text="${book.category.name}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
+
