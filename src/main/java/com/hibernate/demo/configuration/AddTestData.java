@@ -41,5 +41,6 @@ public class AddTestData {
         categoryService.addCategory(category2);
         //adds books
         bookService.addBook(new Book(category2,author1,"Anonimus",264));
+        bookService.addBook(new Book(category2,author1,"I'm trying",404));
     }
 }

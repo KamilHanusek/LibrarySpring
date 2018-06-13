@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -27,10 +27,12 @@
     <table class="table table-hover">
         <thead>
         <tr>
+            <th >Id</th>
             <th th:text="#{category.name}"></th>
         </tr>
         </thead>
         <tr th:each="category : ${categoryList}">
+            <td th:text="${category.id}"></td>
             <td th:text="${category.name}"></td>
         </tr>
     </table>

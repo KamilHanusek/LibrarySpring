@@ -13,4 +13,5 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     public List<Book> findByTitleIgnoreCase(String title);
     public List<Book> findByAuthor(Author author);
     public List<Book> findByCategory(Category category);
+
 }

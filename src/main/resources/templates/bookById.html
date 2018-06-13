@@ -16,7 +16,7 @@
             <a class="navbar-brand" href="/">SpringProject</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/books">Books</a></li>
+            <li><a href="/books">Books</a></li>
             <li><a href="/authors">Authors</a></li>
             <li><a href="/category">Categories</a></li>
         </ul>
@@ -36,17 +36,21 @@
             </tr>
             </thead>
 
-            <tr th:each="book : ${booksList}">
-                <td><a  th:href="'/books/' + @{${book.id}}" th:text="${book.id}"></a></td>
-                <td th:text="${book.title}"></td>
-                <td th:text="${book.author}"></td>
-                <td th:text="${book.size}"></td>
-                <td th:text="${book.category.name}"></td>
+            <tr>
+                <td th:text="${oneBook.id}"></td>
+                <td th:text="${oneBook.title}"></td>
+                <td th:text="${oneBook.author}"></td>
+                <td th:text="${oneBook.size}"></td>
+                <td th:text="${oneBook.category.name}"></td>
             </tr>
         </table>
     </div>
 </div>
-
+<center>
+    <a th:href="@{'/books/' + ${oneBook.id}} + '/deleted'">
+        <button  name="removeRow" style="font-size: 25px; background: limegreen; color:white" type="submit" value="1">Delete this book</button>
+    </a>
+</center>
 </body>
 </html>
 

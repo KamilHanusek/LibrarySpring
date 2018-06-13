@@ -9,7 +9,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @ManyToOne
     private Category category;
@@ -52,7 +52,7 @@ public class Book {
         return size;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
