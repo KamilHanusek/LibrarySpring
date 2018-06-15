@@ -5,8 +5,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Authors</title>
+    <title>Home</title>
+
 </head>
+<style>
+    input{
+        margin-bottom: 1px;
+        margin-top: 2px;
+    }
+</style>
 <body>
 
 
@@ -17,33 +24,21 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/books">Books</a></li>
-            <li class="active"><a href="/authors">Authors</a></li>
+            <li><a href="/authors">Authors</a></li>
             <li><a href="/category">Categories</a></li>
         </ul>
+
     </div>
 </nav>
-
-<div>
-    <div>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th th:text="#{author.id}" width="15%">Author id</th>
-                <th th:text="#{first.name}" width="*">Name</th>
-                <th th:text="#{last.name}" width="*">Surname</th>
-                <th th:text="#{age}" width="40%">Age</th>
-            </tr>
-            </thead>
-
-            <tr th:each="author : ${authorList}">
-                <td th:text="${author.id}"></td>
-                <td th:text="${author.name}"></td>
-                <td th:text="${author.lastname}"></td>
-                <td th:text="${author.age}"></td>
-            </tr>
-        </table>
-    </div>
-</div>
+<form action="/books/add/properties">
+    <center>
+        <input type="text" required="true" name="title"  placeholder="Book title"/> <br/>
+        <input type="number" required="true" name="authorId" placeholder="Author id"/> <br/>
+        <input type="number" required="true" name="categoryId" placeholder="Category id"/> <br/>
+        <input type="number" required="true" name="size" placeholder="Book size (number)"/> <br/>
+        <input type="submit" class="btn btn-success" value="Add book"/> <br/>
+    </center>
+</form>
 
 </body>
 </html>

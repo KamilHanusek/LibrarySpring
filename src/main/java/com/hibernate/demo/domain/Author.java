@@ -51,8 +51,12 @@ public class Author {
         this.age = age;
     }
 
+    public long getId() { return id; }
+
     @Override
     public String toString(){
         return name + " " + lastname;
     }
+
+
 }
