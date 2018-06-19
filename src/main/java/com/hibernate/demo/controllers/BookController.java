@@ -64,9 +64,13 @@ public class BookController {
                                 @RequestParam String categoryId,
                                 @RequestParam String size
                                 ){
-        Author auth =authorService.getById(Long.parseLong(authorId));
-        Category cat = categoryService.getById(Long.parseLong(categoryId));
-        bookService.addBook(new Book(cat,auth,title,Integer.parseInt(size)));
+        try{
+            Author auth =authorService.getById(Long.parseLong(authorId));
+            Category cat = categoryService.getById(Long.parseLong(categoryId));
+            bookService.addBook(new Book(cat,auth,title,Integer.parseInt(size)));
+        }catch (Exception ex){
+            return new ModelAndView("home");
+        }
         Iterable<Book> books = bookService.getAll();
         Map<String, Iterable<Book>> map = new HashMap<>();
         map.put("booksList", books);

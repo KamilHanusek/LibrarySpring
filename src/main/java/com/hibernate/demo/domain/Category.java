@@ -22,7 +22,8 @@ public class Category {
     public String getName(){
         return name;
     }
-
+    @Override
+    public String toString(){ return name; }
     public long getId() {
         return id;
     }

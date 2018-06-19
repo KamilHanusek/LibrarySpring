@@ -33,9 +33,9 @@
 <form action="/books/add/properties">
     <center>
         <input type="text" required="true" name="title"  placeholder="Book title"/> <br/>
-        <input type="number" required="true" name="authorId" placeholder="Author id"/> <br/>
-        <input type="number" required="true" name="categoryId" placeholder="Category id"/> <br/>
-        <input type="number" required="true" name="size" placeholder="Book size (number)"/> <br/>
+        <input type="number" required="true" min="1" name="authorId" placeholder="Author id"/> <br/>
+        <input type="number" required="true" min="1" name="categoryId" placeholder="Category id"/> <br/>
+        <input type="number" required="true" min="1" name="size" placeholder="Book size (number)"/> <br/>
         <input type="submit" class="btn btn-success" value="Add book"/> <br/>
     </center>
 </form>
