@@ -1,4 +1,4 @@
 # LibrarySpring
-Application is still developing
-TODO:
+Application is still developing<br/>
+TODO:<br/>
 Allow adding Authors and Category
